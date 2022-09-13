@@ -1,0 +1,21 @@
+.pageTitle {
+	background-color: black;
+	color: white;
+}
+
+.pageTitle span {
+	color: aqua;
+}
+
+.completedProjectsBanner {
+	background-color: blueviolet;
+	color: white;
+	text-align: center;
+	font-style: italic;
+}
+
+.contactUsLink {
+	text-align: right;
+	text-decoration: underline;
+	background-color: lightblue;
+}
