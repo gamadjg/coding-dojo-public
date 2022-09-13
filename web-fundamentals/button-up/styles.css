@@ -1,0 +1,27 @@
+* {
+	margin: 5px;
+}
+
+#searchBtn {
+	border-radius: 20px;
+	border: 2px solid #3b9c8a;
+	color: #3b9c8a;
+	padding: 5px 30px;
+}
+
+#plusBtn {
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	font-size: larger;
+	color: white;
+	background-color: #3fd1b6;
+	border: none;
+}
+
+#createAccountBtn {
+	background-color: cornflowerblue;
+	color: white;
+	padding: 5px 30px;
+	box-shadow: 3px 3px black;
+}
