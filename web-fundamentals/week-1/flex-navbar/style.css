@@ -1,0 +1,30 @@
+* {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+.nav {
+	display: flex;
+	justify-content: space-between;
+	background-color: #3b3b3b;
+	color: white;
+	padding: 10px;
+}
+
+.nav-links {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.btn {
+	background-color: #1d96a1;
+	color: white;
+	box-shadow: 2px 2px black;
+}
