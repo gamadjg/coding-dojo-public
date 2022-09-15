@@ -2,46 +2,46 @@
 	font-family: "Roboto", sans-serif;
 	margin: 0;
 	padding: 0;
+	/* border: 1px solid red; */
 }
 
-.header {
+#header {
 	background-color: black;
 	width: 100%;
 }
 
-.nav {
+#nav {
 	color: white;
 	display: flex;
 	justify-content: space-evenly;
 	padding: 10px;
 }
 
-.nav-left {
+#nav-left {
 	display: flex;
-	/* flex: 2; */
 	justify-content: space-between;
 }
 
-.nav-right {
+#nav-right {
 	display: flex;
 	align-items: center;
 }
 
-.nav-title {
+#nav-title {
 	margin: 0 20px 0 0;
 }
 
-.nav-links {
+#nav-links {
 	list-style: none;
 	display: flex;
 	align-items: center;
 }
 
-.nav-links li {
+#nav-links li {
 	margin: 0 20px 0 0;
 }
 
-.nav-btn {
+#nav-btn {
 	background-color: #1d96a1;
 	color: white;
 	padding: 5px 10px;
@@ -50,4 +50,18 @@
 a {
 	text-decoration: none;
 	color: white;
+}
+
+#main {
+	display: flex;
+	justify-content: center;
+}
+
+#main-left-col {
+	margin: 0 20px 0 0;
+}
+
+.card {
+	border: 2px solid grey;
+	margin: 10px 0 0 0;
 }
