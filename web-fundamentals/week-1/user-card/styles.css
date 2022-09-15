@@ -1,0 +1,89 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	margin: 20px 0 0 0;
+}
+
+#main {
+	width: 25%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	border: 2px solid grey;
+}
+
+#banner {
+	background-color: aqua;
+	height: 70px;
+	width: 100%;
+}
+
+#user-icon {
+	position: relative;
+	background-image: url("icons/user-circle.png");
+	width: 70px;
+	height: 70px;
+	filter: invert(1);
+	background-size: 70px 70px;
+	z-index: 10;
+	left: 5%;
+	top: 50%;
+	border: 3px solid grey;
+	border-radius: 50%;
+}
+
+#user-icon-border {
+	filter: invert(1);
+	position: relative;
+	border: 5px solid black;
+	border-radius: 50%;
+	left: 1.5%;
+	top: 2%;
+	height: 82%;
+	width: 82%;
+}
+
+#content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 40px 0 5px 20px;
+}
+
+#content-name {
+	margin: 0 0 10px 0;
+}
+
+#content-location {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	margin: 0 0 10px 0;
+}
+
+#location-marker {
+	position: relative;
+	width: 15px;
+	height: 100%;
+}
+
+#content-body {
+	margin: 0 0 10px 0;
+}
+
+#content-footer {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	margin: 0 0 10px 0;
+}
+
+#footer-gear {
+	height: 20px;
+	width: 20px;
+}
