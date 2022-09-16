@@ -9,7 +9,7 @@
 	background-color: black;
 	width: 100%;
 }
-
+/* --------------------------------------- NAV BAR --------------------------------------- */
 #nav {
 	color: white;
 	display: flex;
@@ -47,21 +47,137 @@
 	padding: 5px 10px;
 }
 
-a {
+#nav-links > li > a {
 	text-decoration: none;
 	color: white;
 }
+/* --------------------------------------- MAIN --------------------------------------- */
 
 #main {
 	display: flex;
 	justify-content: center;
-}
-
-#main-left-col {
-	margin: 0 20px 0 0;
+	gap: 20px;
 }
 
 .card {
 	border: 2px solid grey;
 	margin: 10px 0 0 0;
+}
+/* --------------------------------------- CARD HEADER --------------------------------------- */
+
+.card-header {
+	background-color: grey;
+	color: white;
+	padding: 5px 10px;
+}
+
+.card-header > * {
+	padding: 0 5px 0 0;
+}
+
+#card-banner {
+	background-color: aqua;
+	width: 100%;
+	height: 50px;
+}
+/* --------------------------------------- CARD BODY --------------------------------------- */
+
+.card-body > * {
+	margin: 0 5px 5px 10px;
+}
+
+.education > .card-body > * {
+	margin: 5px 5px 5px 10px;
+}
+
+#education-program {
+	font-size: large;
+	font-weight: bold;
+}
+
+#education-date {
+	color: grey;
+}
+
+#footer-link,
+#location-city {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 0 0 0;
+	padding: 0 0 15px 0;
+}
+
+.user-icon {
+	display: inline-block;
+	background-image: url("assets/icons/user-circle.png");
+	width: 70px;
+	height: 70px;
+	filter: invert(1);
+	background-size: 70px 70px;
+	border: 1px solid grey;
+	border-radius: 50%;
+	margin-top: -35px;
+}
+
+#user-icon-border {
+	position: relative;
+	border: 4px solid black;
+	border-radius: 50%;
+	height: 55px;
+	width: 55px;
+	margin: -76px 0 10px 14.5px;
+}
+
+.current-connection-entry {
+	padding: 5px 0 0 0;
+}
+
+.connection-entry {
+	padding: 5px 0 0 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.connection-entry span,
+.current-connection-entry {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.connection-entry > span > .user-icon,
+.connection-entry > .user-icon,
+.current-connection-entry > .user-icon {
+	display: inline-block;
+	background-image: url("assets/icons/user-circle.png");
+	width: 15px;
+	height: 15px;
+	filter: invert(1);
+	background-size: 15px 15px;
+	border: 3px solid white;
+	border-radius: 50%;
+	margin: 0 5px 0 0;
+}
+
+.check,
+.ex {
+	height: 30px;
+	width: 30px;
+}
+/* --------------------------------------- CARD FOOTER --------------------------------------- */
+
+#footer-gear,
+#location-marker {
+	height: 5%;
+	width: 5%;
+}
+
+#location-city {
+	vertical-align: middle;
+}
+
+.card-footer {
+	border-top: 2px solid grey;
+	padding: 5px 0 5px 10px;
 }
