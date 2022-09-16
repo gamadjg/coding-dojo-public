@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
     <title>Dojonary</title>
 </head>
 
@@ -14,7 +15,7 @@
         <div class="nav">
             <div class="nav-title">Dojonary</div>
             <input class="nav-search" type="text" placeholder="Search" />
-            <input type="button" class="nav-btn" value="Login" />
+            <input type="button" class="nav-btn" value="Login" onclick="loginBtn(this)" />
         </div>
     </div>
     <div class="main">
@@ -24,7 +25,7 @@
                     <div class="card-title">ninja</div>
                     <p><em>noun</em></p>
                     <p>Plural: <em>ninjas</em></p>
-                    <input type="button" class="card-btn" value="13 likes" />
+                    <input type="button" class="card-btn" value="13 likes" onclick="likesBtn()" />
                 </div>
                 <div class="card-right">
                     <p class="card-description">
@@ -37,7 +38,7 @@
                     <div class="card-title">ninja</div>
                     <p><em>noun</em></p>
                     <p>Plural: <em>ninjas</em></p>
-                    <input type="button" class="card-btn" value="37 likes" />
+                    <input type="button" class="card-btn" value="37 likes" onclick="likesBtn()" />
                 </div>
                 <div class="card-right">
                     <p class="card-description">
@@ -51,7 +52,8 @@
             <div class="card">
                 <div class="card-left">
                     <div class="card-title">Dojonary is defined by YOU</div>
-                    <input type="button" href="#" class="card-btn add-definition-btn" value="Add Definition" />
+                    <input type="button" onclick="addDefinitionBtn(this)" class="card-btn add-definition-btn"
+                        value="Add Definition" />
                 </div>
             </div>
         </div>
