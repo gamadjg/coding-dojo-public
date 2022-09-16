@@ -1,0 +1,114 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: monospace;
+}
+
+/* Fixed width container class that will "auto-center" itself */
+.main {
+	width: 1200px;
+	margin: 10px auto;
+}
+
+.row {
+	display: flex;
+	align-content: space-between;
+}
+
+.col {
+	flex: 1;
+}
+
+.header {
+	/* background-color: #3b3b3b; */
+}
+
+.nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: black;
+	padding: 10px 15px 13px 15px;
+	width: 1200px;
+	margin: 0 auto;
+	background-color: grey;
+}
+
+.nav-title {
+	font-size: x-large;
+}
+
+.nav-links {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.nav-search,
+.nav-search:focus {
+	width: 50%;
+	height: 30px;
+	outline: none;
+	padding: 5px;
+}
+
+.nav-btn {
+	background-color: #0f3e8a;
+	border: 2px solid black;
+	color: white;
+	padding: 5px 30px;
+	box-shadow: 3px 3px black;
+	cursor: pointer;
+}
+
+.main {
+	display: flex;
+	gap: 10px;
+}
+
+.card {
+	border: 2px solid black;
+	margin: 0 0 10px 0;
+	display: flex;
+}
+
+.col-left {
+	flex: 2;
+}
+
+.card-left {
+	flex: 1;
+	padding: 5px;
+	text-align: center;
+}
+
+.card-left > *,
+.card-right > * {
+	margin: 5px 5px;
+}
+
+.card-right {
+	flex: 3;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 5px;
+}
+
+.card-title {
+	font-size: x-large;
+}
+
+.card-btn {
+	background-color: yellow;
+	padding: 5px 10px;
+	box-shadow: 2px 2px black;
+	cursor: pointer;
+}
+
+.add-definition-btn {
+	background-color: greenyellow;
+	cursor: pointer;
+}
