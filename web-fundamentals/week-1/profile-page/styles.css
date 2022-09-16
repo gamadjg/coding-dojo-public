@@ -66,17 +66,26 @@
 /* --------------------------------------- CARD HEADER --------------------------------------- */
 
 .card-header {
-	background-color: grey;
+	background-color: #696969;
 	color: white;
-	padding: 5px 10px;
+	padding: 10px 10px;
 }
 
 .card-header > * {
-	padding: 0 5px 0 0;
+	margin: 0 5px 0 0;
+}
+
+.connections-num {
+	/* display: inline-block; */
+	border-radius: 50%;
+	/* width: 20px; */
+	border: 3px solid lightgrey;
+	background-color: lightgrey;
+	color: black;
 }
 
 #card-banner {
-	background-color: aqua;
+	background-color: #118a82;
 	width: 100%;
 	height: 50px;
 }
@@ -110,13 +119,24 @@
 .user-icon {
 	display: inline-block;
 	background-image: url("assets/icons/user-circle.png");
+	filter: invert(1);
+	border-radius: 50%;
+}
+
+.profile-icon {
 	width: 70px;
 	height: 70px;
-	filter: invert(1);
 	background-size: 70px 70px;
 	border: 1px solid grey;
-	border-radius: 50%;
 	margin-top: -35px;
+}
+
+.connection-icon {
+	width: 25px;
+	height: 25px;
+	background-size: 25px 25px;
+	border: 3px solid white;
+	margin: 0 5px 0 0;
 }
 
 #user-icon-border {
@@ -146,24 +166,10 @@
 	gap: 5px;
 }
 
-.connection-entry > span > .user-icon,
-.connection-entry > .user-icon,
-.current-connection-entry > .user-icon {
-	display: inline-block;
-	background-image: url("assets/icons/user-circle.png");
-	width: 15px;
-	height: 15px;
-	filter: invert(1);
-	background-size: 15px 15px;
-	border: 3px solid white;
-	border-radius: 50%;
-	margin: 0 5px 0 0;
-}
-
 .check,
 .ex {
-	height: 30px;
-	width: 30px;
+	height: 25px;
+	width: 25px;
 }
 /* --------------------------------------- CARD FOOTER --------------------------------------- */
 
