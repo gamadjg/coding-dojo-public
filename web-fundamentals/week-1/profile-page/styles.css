@@ -118,8 +118,6 @@
 
 .user-icon {
 	display: inline-block;
-	background-image: url("assets/icons/user-circle.png");
-	filter: invert(1);
 	border-radius: 50%;
 }
 
@@ -139,14 +137,14 @@
 	margin: 0 5px 0 0;
 }
 
-#user-icon-border {
+/* #user-icon-border {
 	position: relative;
 	border: 4px solid black;
 	border-radius: 50%;
 	height: 55px;
 	width: 55px;
 	margin: -76px 0 10px 14.5px;
-}
+} */
 
 .current-connection-entry {
 	padding: 5px 0 0 0;
