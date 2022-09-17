@@ -11,13 +11,54 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="container-top">
-            <div class="userName">Some User</div>
-            <div class="likes-count"><span class="count">0</span> like(s)</div>
-            <button class="like-button" onclick="likeCounter()">Like</button>
+    <div class="nav">
+        <div class="nav-title">Network</div>
+    </div>
+    <div class="page-title">Your Feed</div>
+    <div class="main">
+        <div class="col">
+            <div class="container-user">
+                <img class="user-icon" src="user-circle.png" />
+                <a href="#">Add an avatar</a>
+                <p class="name">James Doe</p>
+            </div>
         </div>
-        <div class="container-bottom">This is some filler text, it can say anything we like</div>
+        <div class="col">
+            <div class="container">
+                <div class="container-top">
+                    <div class="name">Neil M</div>
+                    <div class="likes-count"><span class="count">9</span> like(s)</div>
+                    <button class="like-button" onclick="likeCounter(0)">Like</button>
+                </div>
+                <div class="container-bottom">
+                    <p>I just set up this new discord bot,
+                        let me know what you all think.
+                        <span><a href="#">link</a></span>
+                    </p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="container-top">
+                    <div class="name">Nichole K</div>
+                    <div class="likes-count"><span class="count">12</span> like(s)</div>
+                    <button class="like-button" onclick="likeCounter(1)">Like</button>
+                </div>
+                <div class="container-bottom">
+                    <p>Just finished my <a href="#">next comic</a>,
+                        check it out.</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="container-top">
+                    <div class="name">Jim R</div>
+                    <div class="likes-count"><span class="count">9</span> like(s)</div>
+                    <button class="like-button" onclick="likeCounter(2)">Like</button>
+                </div>
+                <div class="container-bottom">
+                    <p>I can't stop listening to the <a href="#">new album</a>. Who else is liking it?</p>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 

@@ -1,24 +1,68 @@
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
+	font-family: monospace;
 }
 
-body {
-	width: 1200px;
-	margin: 10px auto;
+/* Fixed width container class that will "auto-center" itself */
+.main {
+	width: 700px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	gap: 50px;
 }
+
+/* .main:first-child {
+	display: flex;
+	justify-content: center;
+} */
 
 .container {
 	border: 2px solid black;
-	height: 200px;
-	width: 300px;
+	margin: 0 0 10px 0;
 }
 
-.container-top,
-.container-bottom {
+.container-user {
+	width: 200px;
 	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	align-items: center;
-	justify-content: space-between;
+	padding: 10px;
+	border: 2px solid black;
+}
+
+.name {
+	font-size: x-large;
+}
+
+.container-user > * {
+	margin: 5px;
+}
+
+.user-icon {
+	height: 70px;
+	width: 70px;
+}
+
+.container-top {
+	display: flex;
+	padding: 10px;
+	gap: 10px;
+	align-items: center;
+}
+
+.container-top :first-child {
+	flex: 2;
+}
+
+.container-top :last-child {
+	flex: 1;
+}
+
+.container-bottom {
 	padding: 10px;
 }
 
@@ -28,4 +72,29 @@ body {
 	box-shadow: 2px 2px black;
 	padding: 5px 10px;
 	cursor: pointer;
+}
+
+.header {
+	background-color: #3b3b3b;
+}
+
+.nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: white;
+	padding: 10px 15px 13px 15px;
+	width: 700px;
+	margin: 0 auto;
+	background-color: #3b3b3b;
+}
+
+.nav-title {
+	font-size: x-large;
+}
+
+.page-title {
+	text-align: center;
+	margin: 10px auto;
+	font-size: x-large;
 }
