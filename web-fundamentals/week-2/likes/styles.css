@@ -1,0 +1,30 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 1200px;
+	margin: 10px auto;
+}
+
+.container {
+	border: 2px solid black;
+	height: 200px;
+	width: 300px;
+}
+
+.container-top,
+.container-bottom {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+}
+
+.like-button {
+	background-color: yellow;
+	border: 2px solid black;
+	box-shadow: 2px 2px black;
+	padding: 5px 10px;
+}
