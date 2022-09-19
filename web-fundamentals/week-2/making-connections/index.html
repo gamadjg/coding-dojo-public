@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+    <title>Profile</title>
+</head>
+
+<body>
+    <div id="header">
+        <div id="nav">
+            <div id="nav-left">
+                <h1 id="nav-title">Profile</h1>
+                <ul id="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#" id="active">My Profile</a></li>
+                    <li><a href="#">Find Connections</a></li>
+                </ul>
+            </div>
+            <div id="nav-right">
+                <button id="nav-btn">Sign Out</button>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="main-left-col">
+            <div class="card">
+                <div id="card-banner"></div>
+                <div class="card-body">
+                    <img class="user-icon profile-icon" src="assets/images/jane-m.jpg" />
+                    <!-- <div id="user-icon-border"></div> -->
+                    <h2 id="content-name">Jane M</h2>
+                    <img id="location-marker" src="assets/icons/map-marker.png" />
+                    <span id="location-city">Seattle</span>
+                    <p id="content-titles">Developer | Engineer | Problem Solver</p>
+                    <p id="content-description">Master of shadows and the Internet!</p>
+                    <img id="footer-gear" src="assets/icons/gear.png" />
+                    <a id="footer-link" href="#">edit profile</a>
+                </div>
+            </div>
+            <div class="card education">
+                <div class="card-header">
+                    <h2>Education</h2>
+                </div>
+                <div class="card-body">
+                    <p id="education-program">Coding Dojo - Full Stack Bootcamp</p>
+                    <p id="education-date">Dec 2019 - Mar 2020</p>
+                    <p id="education-skills">Triple black belt in Python, MERN, and C#...</p>
+                </div>
+            </div>
+        </div>
+        <div id="main-right-col">
+            <div class="card">
+                <div class="card-header"><span class="connections-num">2</span>Connection Requests</div>
+                <div class="card-body">
+                    <div class="connection-entry" id="todd-k">
+                        <span>
+                            <img class="user-icon connection-icon" src="assets/images/todd-s.jpg" />
+                            <span class="connection-name">Todd K</span>
+                        </span>
+                        <span>
+                            <a href="#"><img class="check" onclick="approveUser('todd-k')"
+                                    src="assets/icons/accept-circle.png" /></a>
+                            <a href="#"><img class="ex ex1" src="assets/icons/close-circle.png" /></a>
+                        </span>
+                    </div>
+                    <div class="connection-entry" id="phil-k">
+                        <span>
+                            <img class="user-icon connection-icon" src="assets/images/phil-s.jpg" />
+                            <span class="connection-name">Phil K</span>
+                        </span>
+                        <span>
+                            <a href="#"><img class="check" onclick="approveUser('phil-k')"
+                                    src="assets/icons/accept-circle.png" /></a>
+                            <a href="#"><img class="ex ex2" onclick="denyUser('phil-k')"
+                                    src="assets/icons/close-circle.png" /></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"><span class="connections-num">500+</span>Your Connections</div>
+                <div class="card-body current-connections">
+                    <div class="current-connection-entry">
+                        <img class="user-icon connection-icon" src="assets/images/adrien-s.jpg" />
+                        <span class="connection-name">Adrien D</span>
+                    </div>
+                    <div class="current-connection-entry">
+                        <img class="user-icon connection-icon" src="assets/images/anne-s.jpg" />
+                        <span class="connection-name">Anne J</span>
+                    </div>
+                    <div class="current-connection-entry">
+                        <img class="user-icon connection-icon" src="assets/images/alayne-s.jpg" />
+                        <span class="connection-name">Alayne T</span>
+                    </div>
+                    <div class="current-connection-entry">
+                        <img class="user-icon connection-icon" src="assets/images/arry-s.jpg" />
+                        <span class="connection-name">Arry Y</span>
+                    </div>
+                </div>
+                <div class="card-footer"><a href="">View More</a></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

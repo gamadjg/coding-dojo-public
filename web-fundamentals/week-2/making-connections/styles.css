@@ -1,0 +1,187 @@
+* {
+	font-family: "Roboto", sans-serif;
+	margin: 0;
+	padding: 0;
+	/* border: 1px solid red; */
+}
+
+#header {
+	background-color: black;
+	width: 100%;
+}
+/* --------------------------------------- NAV BAR --------------------------------------- */
+#nav {
+	color: white;
+	display: flex;
+	justify-content: space-evenly;
+	padding: 10px;
+}
+
+#nav-left {
+	display: flex;
+	justify-content: space-between;
+}
+
+#nav-right {
+	display: flex;
+	align-items: center;
+}
+
+#nav-title {
+	margin: 0 20px 0 0;
+}
+
+#nav-links {
+	list-style: none;
+	display: flex;
+	align-items: center;
+}
+
+#nav-links li {
+	margin: 0 20px 0 0;
+}
+
+#nav-btn {
+	background-color: #1d96a1;
+	color: white;
+	padding: 5px 10px;
+}
+
+#nav-links > li > a {
+	text-decoration: none;
+	color: white;
+}
+/* --------------------------------------- MAIN --------------------------------------- */
+
+#main {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}
+
+.card {
+	border: 2px solid grey;
+	margin: 10px 0 0 0;
+}
+/* --------------------------------------- CARD HEADER --------------------------------------- */
+
+.card-header {
+	background-color: #696969;
+	color: white;
+	padding: 10px 10px;
+}
+
+.card-header > * {
+	margin: 0 5px 0 0;
+}
+
+.connections-num {
+	/* display: inline-block; */
+	border-radius: 50%;
+	/* width: 20px; */
+	border: 3px solid lightgrey;
+	background-color: lightgrey;
+	color: black;
+}
+
+#card-banner {
+	background-color: #118a82;
+	width: 100%;
+	height: 50px;
+}
+/* --------------------------------------- CARD BODY --------------------------------------- */
+
+.card-body > * {
+	margin: 0 5px 5px 10px;
+}
+
+.education > .card-body > * {
+	margin: 5px 5px 5px 10px;
+}
+
+#education-program {
+	font-size: large;
+	font-weight: bold;
+}
+
+#education-date {
+	color: grey;
+}
+
+#footer-link,
+#location-city {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 0 0 0;
+	padding: 0 0 15px 0;
+}
+
+.user-icon {
+	display: inline-block;
+	border-radius: 50%;
+}
+
+.profile-icon {
+	width: 70px;
+	height: 70px;
+	background-size: 70px 70px;
+	border: 1px solid grey;
+	margin-top: -35px;
+}
+
+.connection-icon {
+	width: 25px;
+	height: 25px;
+	background-size: 25px 25px;
+	border: 3px solid white;
+	margin: 0 5px 0 0;
+}
+
+/* #user-icon-border {
+	position: relative;
+	border: 4px solid black;
+	border-radius: 50%;
+	height: 55px;
+	width: 55px;
+	margin: -76px 0 10px 14.5px;
+} */
+
+.current-connection-entry {
+	padding: 5px 0 0 0;
+}
+
+.connection-entry {
+	padding: 5px 0 0 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.connection-entry span,
+.current-connection-entry {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.check,
+.ex {
+	height: 25px;
+	width: 25px;
+}
+/* --------------------------------------- CARD FOOTER --------------------------------------- */
+
+#footer-gear,
+#location-marker {
+	height: 5%;
+	width: 5%;
+}
+
+#location-city {
+	vertical-align: middle;
+}
+
+.card-footer {
+	border-top: 2px solid grey;
+	padding: 5px 0 5px 10px;
+}

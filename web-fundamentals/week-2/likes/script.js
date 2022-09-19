@@ -8,3 +8,9 @@ function likeCounter(counter) {
 	likeCounter[counter].innerHTML = parseInt(likeCounter[counter].innerHTML) + 1;
 	// console.log(likeCounter[counter].innerHTML);
 }
+
+// function likeCounter(counter) {
+// 	let likeCounter = document.querySelector(counter);
+// 	likeCounter[counter].innerHTML = parseInt(likeCounter[counter].innerHTML) + 1;
+// 	// console.log(likeCounter[counter].innerHTML);
+// }
