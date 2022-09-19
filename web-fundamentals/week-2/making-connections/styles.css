@@ -84,6 +84,13 @@
 	color: black;
 }
 
+.connections-req-num {
+	border-radius: 50%;
+	border: 3px solid lightgrey;
+	background-color: lightgrey;
+	color: black;
+}
+
 #card-banner {
 	background-color: #118a82;
 	width: 100%;

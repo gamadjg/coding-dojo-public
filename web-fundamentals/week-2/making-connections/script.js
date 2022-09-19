@@ -12,8 +12,6 @@ function approveUser(flName) {
 			newConnection[1]
 	);
 
-	console.log(newConnection);
-
 	addNewConnection.innerHTML +=
 		`
 		<div class="current-connection-entry">
@@ -25,8 +23,23 @@ function approveUser(flName) {
 		`</span>
 		</div>
 	`;
+	increaseCount(true);
 }
 
 function denyUser(userName) {
 	document.querySelector("#" + userName).remove();
+	increaseCount(false);
+}
+
+function increaseCount(bool) {
+	let requestCountDoc = document.querySelector(".connections-req-num");
+	let requestCount = parseInt(requestCountDoc.innerHTML);
+	let connectionsCountDoc = document.querySelector(".connections-num");
+
+	if (bool) {
+		requestCountDoc.innerHTML = requestCountDoc.innerHTML - 1;
+		connectionsCountDoc.innerHTML = parseInt(connectionsCountDoc.innerHTML) + 1;
+	} else {
+		requestCountDoc.innerHTML = requestCountDoc.innerHTML - 1;
+	}
 }
