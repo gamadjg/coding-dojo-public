@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <title>Dojo Weather</title>
+</head>
+
+<body>
+    <div id="nav-bar">
+        <h1 id="nav-title">DojoWeather</h1>
+        <ul id="nav-list">
+            <li id="nav-city" onclick="alertCity()">Burbank</li>
+            <li id="nav-city" onclick="alertCity()">Chicago</li>
+            <li id="nav-city" onclick="alertCity()">Dallas</li>
+        </ul>
+    </div>
+    <div id="main">
+        <div id="main-header">
+            <h1>San Jose</h1>
+            <p id="main-header-right">
+                Show temperature in
+                <select name="tempSelector">
+                    <option value="celcius">C</option>
+                    <option value="Fahrenheit">F</option>
+                </select>
+            </p>
+        </div>
+        <div id="main-container">
+            <div class="card">
+                <h1 class="card-title">Today</h1>
+                <img class="card-weather-pic" src="assets/assets/some_clouds.png">
+                <p class="card-description">Some Rain</p>
+                <div class="weather-min-max">
+                    <p>24</p>
+                    <p>18</p>
+                </div>
+            </div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </div>
+    <div id="cookies-container">
+        <img src="assets/assets/cookie.png" alt='Internet cookies image' />
+        <div id="cookie-body">
+            <h1 id="cookie-body-header">Stop! Cookie time</h1>
+            <p id="cookie-body-body">We use cookies (sadly not the edible ones) to personalize content and ads, to
+                provide
+                social media features and to analyse our traffic. <a href="#">Read more...</a>
+            </p>
+        </div>
+        <input type="button" id="cookie-btn" value="I Accept" />
+    </div>
+</body>
+
+</html>
