@@ -1,0 +1,125 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: monospace;
+}
+
+#nav-bar {
+	width: 100%;
+	background-color: blueviolet;
+	display: flex;
+	justify-content: space-around;
+	padding: 5px 10px;
+}
+
+#nav-title {
+}
+
+#nav-list {
+	display: flex;
+	align-items: center;
+}
+
+#nav-list > * {
+	list-style: none;
+}
+
+.nav-city {
+	padding: 5px 10px;
+	font-size: x-large;
+	font-weight: bold;
+}
+
+#main {
+	/* background-color: aliceblue; */
+	height: 1000px;
+	/* width: 50%; */
+	margin: 0 auto;
+}
+
+#main-header {
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+	margin: 0 auto;
+	border-bottom: 2px solid black;
+}
+
+#main-header-city {
+	/* font-size: xx-large; */
+}
+
+#main-header-right {
+	font-size: x-large;
+}
+
+#main-body {
+	display: flex;
+	width: 50%;
+	align-items: center;
+	margin: 0 auto;
+	justify-content: space-between;
+}
+
+.card {
+	background-color: aliceblue;
+	display: inline-block;
+	/* border: 2px solid black; */
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	padding: 10px;
+	margin: 20px 5px;
+}
+
+.card > * {
+	padding: 5px;
+}
+
+.weather-min-max {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.card-weather-pic {
+	width: 80%;
+	border-radius: 50%;
+}
+
+.card-description {
+	font-size: larger;
+}
+
+.red-temp {
+	color: red;
+	font-size: large;
+}
+
+.blue-temp {
+	color: blue;
+	font-size: large;
+}
+
+#cookies-container {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: aquamarine;
+	display: flex;
+	width: 50%;
+	margin: 0 auto;
+	align-items: center;
+	justify-content: space-around;
+	padding: 20px;
+	gap: 10px;
+}
+
+#cookie-btn {
+	background-color: cyan;
+	box-shadow: 2px 2px black;
+	padding: 5px 10px;
+}

@@ -14,35 +14,60 @@
     <div id="nav-bar">
         <h1 id="nav-title">DojoWeather</h1>
         <ul id="nav-list">
-            <li id="nav-city" onclick="alertCity()">Burbank</li>
-            <li id="nav-city" onclick="alertCity()">Chicago</li>
-            <li id="nav-city" onclick="alertCity()">Dallas</li>
+            <li><a class="nav-city" onclick="alertCity()">Burbank</a></li>
+            <li><a class="nav-city" onclick="alertCity()">Chicago</a></li>
+            <li><a class="nav-city" onclick="alertCity()">Dallas</a></li>
+
         </ul>
     </div>
     <div id="main">
         <div id="main-header">
-            <h1>San Jose</h1>
-            <p id="main-header-right">
+            <h1 id="main-header-city">San Jose</h1>
+            <div id="main-header-right">
                 Show temperature in
                 <select name="tempSelector">
                     <option value="celcius">C</option>
                     <option value="Fahrenheit">F</option>
                 </select>
-            </p>
+            </div>
         </div>
-        <div id="main-container">
+        <div id="main-body">
             <div class="card">
                 <h1 class="card-title">Today</h1>
-                <img class="card-weather-pic" src="assets/assets/some_clouds.png">
-                <p class="card-description">Some Rain</p>
+                <img class="card-weather-pic" src="assets/assets/some_rain.png">
+                <p class="card-description">some rain</p>
                 <div class="weather-min-max">
-                    <p>24</p>
-                    <p>18</p>
+                    <p class="red-temp">24<span>&#176;</span></p>
+                    <p class="blue-temp">18<span>&#176;</span></p>
                 </div>
             </div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
+            <div class="card">
+                <h1 class="card-title">Tomorrow</h1>
+                <img class="card-weather-pic" src="assets/assets/some_sun.png">
+                <p class="card-description">some sun</p>
+                <div class="weather-min-max">
+                    <p class="red-temp">27<span>&#176;</span></p>
+                    <p class="blue-temp">19<span>&#176;</span></p>
+                </div>
+            </div>
+            <div class="card">
+                <h1 class="card-title">Friday</h1>
+                <img class="card-weather-pic" src="assets/assets/some_clouds.png">
+                <p class="card-description">some clouds</p>
+                <div class="weather-min-max">
+                    <p class="red-temp">21<span>&#176;</span></p>
+                    <p class="blue-temp">16<span>&#176;</span></p>
+                </div>
+            </div>
+            <div class="card">
+                <h1 class="card-title">Saturday</h1>
+                <img class="card-weather-pic" src="assets/assets/some_sun.png">
+                <p class="card-description">some sun</p>
+                <div class="weather-min-max">
+                    <p class="red-temp">26<span>&#176;</span></p>
+                    <p class="blue-temp">21<span>&#176;</span></p>
+                </div>
+            </div>
         </div>
     </div>
     <div id="cookies-container">
@@ -54,7 +79,7 @@
                 social media features and to analyse our traffic. <a href="#">Read more...</a>
             </p>
         </div>
-        <input type="button" id="cookie-btn" value="I Accept" />
+        <input type="button" id="cookie-btn" value="I Accept" onclick="closeCookieContainer()" />
     </div>
 </body>
 
