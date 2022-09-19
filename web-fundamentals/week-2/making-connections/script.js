@@ -43,3 +43,28 @@ function increaseCount(bool) {
 		requestCountDoc.innerHTML = requestCountDoc.innerHTML - 1;
 	}
 }
+
+users = {};
+newUser(0, "Adrien D", "adrien-s.jpg");
+newUser(1, "Alayne T", "alayne-s.jpg");
+newUser(2, "Anne J", "anne-s.jpg");
+newUser(3, "Arry Y", "arry-s.jpg");
+newUser(4, "Jane M", "jane-m.jpg");
+newUser(5, "Phil K", "phil-s.jpg");
+newUser(6, "Todd K", "todd-s.jpg");
+
+function newUser(id, name, picture) {
+	users[id] = { name: name, picture: picture };
+}
+
+//console.log(users);
+
+function changeUser() {
+	let userImg = document.querySelector(".profile-icon");
+	let displayName = document.querySelector("#content-name");
+	// console.log(userImg);
+	let randomUser = users[Math.floor(Math.random() * 7)];
+	displayName.innerHTML = randomUser.name;
+	userImg.setAttribute("src", "assets/images/" + randomUser.picture);
+	console.log(displayName.innerHTML);
+}
