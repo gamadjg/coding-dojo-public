@@ -1,12 +1,12 @@
 let originalTemp = "celsius";
 
 function alertCity(element) {
-	alert("You clicked on " + element.innerHTML);
+	alert("Loading weather report...");
 }
 
 function closeCookieContainer(element) {
 	let cookiesContainer = document.querySelector("#cookies-container");
-	cookiesContainer.remove();
+	cookiesContainer.style.display = "none";
 }
 
 function tempSelect() {
