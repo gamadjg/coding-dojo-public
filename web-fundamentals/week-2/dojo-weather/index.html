@@ -7,27 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
-    <title>Dojo Weather</title>
+    <title>Weather Forecast</title>
 </head>
 
 <body>
     <div id="nav-bar">
         <h1 id="nav-title">DojoWeather</h1>
         <ul id="nav-list">
-            <li><a class="nav-city" onclick="alertCity()">Burbank</a></li>
-            <li><a class="nav-city" onclick="alertCity()">Chicago</a></li>
-            <li><a class="nav-city" onclick="alertCity()">Dallas</a></li>
-
+            <li><a class="nav-city" onclick="alertCity(this)">Burbank</a></li>
+            <li><a class="nav-city" onclick="alertCity(this)">Chicago</a></li>
+            <li><a class="nav-city" onclick="alertCity(this)">Dallas</a></li>
         </ul>
     </div>
     <div id="main">
         <div id="main-header">
             <h1 id="main-header-city">San Jose</h1>
             <div id="main-header-right">
-                Show temperature in
-                <select name="tempSelector">
-                    <option value="celcius">C</option>
-                    <option value="Fahrenheit">F</option>
+                <label for="temp-selector" id="temp-selector-text">Show temperature in</label>
+                <select id="temp-selector" name="temp-selector" onchange="tempSelect(this)">
+                    <option id="celsius" value="celsius">C</option>
+                    <option id="fahrenheit" value="fahrenheit">F</option>
                 </select>
             </div>
         </div>
@@ -36,36 +35,60 @@
                 <h1 class="card-title">Today</h1>
                 <img class="card-weather-pic" src="assets/assets/some_rain.png">
                 <p class="card-description">some rain</p>
-                <div class="weather-min-max">
-                    <p class="red-temp">24<span>&#176;</span></p>
-                    <p class="blue-temp">18<span>&#176;</span></p>
+                <div class="weather-temps">
+                    <div class="temp-left">
+                        <span class="celsius">24</span>
+                        &deg;
+                    </div>
+                    <div class="temp-right">
+                        <span class="celsius">18</span>
+                        &deg;
+                    </div>
                 </div>
             </div>
             <div class="card">
                 <h1 class="card-title">Tomorrow</h1>
                 <img class="card-weather-pic" src="assets/assets/some_sun.png">
                 <p class="card-description">some sun</p>
-                <div class="weather-min-max">
-                    <p class="red-temp">27<span>&#176;</span></p>
-                    <p class="blue-temp">19<span>&#176;</span></p>
+                <div class="weather-temps">
+                    <div class="temp-left">
+                        <span class="celsius">27</span>
+                        &deg;
+                    </div>
+                    <div class="temp-right">
+                        <span class="celsius">19</span>
+                        &deg;
+                    </div>
                 </div>
             </div>
             <div class="card">
                 <h1 class="card-title">Friday</h1>
                 <img class="card-weather-pic" src="assets/assets/some_clouds.png">
                 <p class="card-description">some clouds</p>
-                <div class="weather-min-max">
-                    <p class="red-temp">21<span>&#176;</span></p>
-                    <p class="blue-temp">16<span>&#176;</span></p>
+                <div class="weather-temps">
+                    <div class="temp-left">
+                        <span class="celsius">21</span>
+                        &deg;
+                    </div>
+                    <div class="temp-right">
+                        <span class="celsius">16</span>
+                        &deg;
+                    </div>
                 </div>
             </div>
             <div class="card">
                 <h1 class="card-title">Saturday</h1>
                 <img class="card-weather-pic" src="assets/assets/some_sun.png">
                 <p class="card-description">some sun</p>
-                <div class="weather-min-max">
-                    <p class="red-temp">26<span>&#176;</span></p>
-                    <p class="blue-temp">21<span>&#176;</span></p>
+                <div class="weather-temps">
+                    <div class="temp-left">
+                        <span class="celsius">26</span>
+                        &deg;
+                    </div>
+                    <div class="temp-right">
+                        <span class="celsius">21</span>
+                        &deg;
+                    </div>
                 </div>
             </div>
         </div>
@@ -79,7 +102,7 @@
                 social media features and to analyse our traffic. <a href="#">Read more...</a>
             </p>
         </div>
-        <input type="button" id="cookie-btn" value="I Accept" onclick="closeCookieContainer()" />
+        <input type="button" id="cookie-btn" value="I Accept" onclick="closeCookieContainer(this)" />
     </div>
 </body>
 

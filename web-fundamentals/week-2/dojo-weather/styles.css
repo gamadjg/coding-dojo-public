@@ -2,19 +2,20 @@
 	margin: 0;
 	padding: 0;
 	font-family: monospace;
+	font-weight: bold;
 }
 
 #nav-bar {
 	width: 100%;
-	background-color: blueviolet;
+	background-color: #7b90b3;
 	display: flex;
 	justify-content: space-around;
 	padding: 5px 10px;
 }
 
 #nav-title {
+	color: white;
 }
-
 #nav-list {
 	display: flex;
 	align-items: center;
@@ -28,17 +29,19 @@
 	padding: 5px 10px;
 	font-size: x-large;
 	font-weight: bold;
+	cursor: pointer;
+	color: white;
 }
 
 #main {
 	/* background-color: aliceblue; */
-	height: 1000px;
-	/* width: 50%; */
+	height: 800px;
+	width: 60%;
 	margin: 0 auto;
 }
 
 #main-header {
-	width: 50%;
+	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -47,60 +50,68 @@
 	border-bottom: 2px solid black;
 }
 
-#main-header-city {
-	/* font-size: xx-large; */
-}
-
 #main-header-right {
 	font-size: x-large;
 }
 
+#temp-selector {
+	cursor: pointer;
+}
+
 #main-body {
+	width: 100%;
 	display: flex;
-	width: 50%;
-	align-items: center;
 	margin: 0 auto;
+	padding: 10px;
 	justify-content: space-between;
+	/* border-top: 2px solid black; */
 }
 
 .card {
-	background-color: aliceblue;
+	background-color: lightgrey;
 	display: inline-block;
-	/* border: 2px solid black; */
 	display: flex;
 	flex-flow: column wrap;
 	align-items: center;
-	padding: 10px;
+	text-align: center;
+	padding: 5px;
 	margin: 20px 5px;
+	width: 200px;
 }
 
 .card > * {
 	padding: 5px;
 }
 
-.weather-min-max {
+.weather-temps {
 	display: flex;
-	justify-content: space-between;
 	gap: 20px;
 }
 
 .card-weather-pic {
-	width: 80%;
+	width: 70%;
+	/* min-width: 70%; */
 	border-radius: 50%;
 }
 
 .card-description {
-	font-size: larger;
+	font-size: x-large;
+	word-wrap: none;
 }
 
-.red-temp {
+.temp-left {
 	color: red;
-	font-size: large;
+	font-size: x-large;
 }
 
-.blue-temp {
+.temp-right {
 	color: blue;
-	font-size: large;
+	font-size: x-large;
+}
+
+.temp-left,
+.temp-right {
+	display: flex;
 }
 
 #cookies-container {
@@ -108,7 +119,7 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background-color: aquamarine;
+	background-color: lightgrey;
 	display: flex;
 	width: 50%;
 	margin: 0 auto;
@@ -116,10 +127,12 @@
 	justify-content: space-around;
 	padding: 20px;
 	gap: 10px;
+	border: 2px solid black;
 }
 
 #cookie-btn {
 	background-color: cyan;
 	box-shadow: 2px 2px black;
 	padding: 5px 10px;
+	cursor: pointer;
 }
