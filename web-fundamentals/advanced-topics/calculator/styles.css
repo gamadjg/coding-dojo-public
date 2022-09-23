@@ -1,0 +1,35 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-family: monospace;
+	background-color: aqua;
+}
+
+#calculator {
+	width: 400px;
+	margin: 100px auto;
+	/* display: flex;
+	flex-direction: column;
+	justify-content: center; */
+}
+
+#display {
+	border: 2px solid black;
+	height: 15px;
+	padding: 5px;
+}
+
+.row {
+	display: flex;
+	/* gap: 5px; */
+}
+
+button {
+	flex: 1;
+	border-radius: 10px;
+	/* margin: 5px 0; */
+}
+
+#equals {
+	width: 25%;
+}
