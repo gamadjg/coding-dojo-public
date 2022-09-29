@@ -1,0 +1,24 @@
+body {
+	background-color: turquoise;
+}
+
+#container {
+	width: 40%;
+	background-color: aquamarine;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+h1 {
+	text-align: center;
+}
+
+.box {
+	background-color: rebeccapurple;
+	width: 100px;
+	height: 100px;
+	margin: 10px;
+	border: 2px solid black;
+}
