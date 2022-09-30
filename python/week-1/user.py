@@ -18,21 +18,27 @@ class User:
         ]
         for value in valuesList:
             print(value)
+        print("")
+        return self
 
     def enroll_self(self):
-        self.is_rewards_member = True
-        self.gold_card_points = 200
+        if not self.is_rewards_member:
+            self.is_rewards_member = True
+            self.gold_card_points = 200
+            print("User has been enrolled.\n")
+        else:
+            print("You are already a user.\n")
         return self
 
     def spend_points(self, amount):
         if not self.is_rewards_member:
-            print("You are not a member. No points to spend.")
+            print("You are not a member. No points to spend.\n")
         else:
             if self.gold_card_points < amount:
-                print("Not enough points to complete transaction.")
+                print("Not enough points to complete transaction.\n")
             else:
                 self.gold_card_points -= amount
-                print("Transaction complete.")
+                print("Transaction complete.\n")
         return self
 
 
@@ -40,22 +46,12 @@ person1 = User("David", "Gama", "david@gmail.com", 30)
 person2 = User("Aaron", "Zama", "aaron@gmail.com", 21)
 person3 = User("Darren", "Mama", "darren@gmail.com", 50)
 
-person1.display_info()
-person2.display_info()
-person3.display_info()
 
-# user not enrolled, spending points
-person1.spend_points(50)
+# person 1 not enrolled, spending points
+person1.display_info().spend_points(50).display_info()
 
-# user enrolled, spending points
-person2.enroll_self()
-person2.spend_points(80)
+# person 2 enrolled, spending points
+person2.display_info().enroll_self().spend_points(80).display_info()
 
-# user enrolled, spending more points than what's available
-person3.enroll_self()
-person3.spend_points(210)
-person3.spend_points(40)
-
-person1.display_info()
-person2.display_info()
-person3.display_info()
+# person 3 enrolled, spending more points than what's available
+person3.display_info().enroll_self().spend_points(210).spend_points(40).display_info()
