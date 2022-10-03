@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Dojo Survey</title>
+</head>
+
+<body>
+    <main>
+        <form class="content-container" action="/process" method="post">
+            <h1 class="form-title">Dojo Survey</h1>
+            <div class="name-container">
+                <label for="name">Your Name:</label>
+                <input type="text" name="name" id="name" />
+            </div>
+            <div class="dojoLocation-container">
+                <label for="radio">Dojo Location:</label>
+                <div>
+                    <input type="radio" id="sanJoseRadio" name="radioLocation" value="San Jose" />
+                    <label for="sanJoseRadio">San Jose</label>
+                    <input type="radio" id="newYorkRadio" name="radioLocation" value="New York" />
+                    <label for="newYorkRadio">New York</label>
+                </div>
+            </div>
+            <div class="favoriteLanguage-container">
+                <label for="favoriteLanguageSelect">Favorite Language:</label>
+                <select id="favoriteLanguageSelect" name="favoriteLanguageSelect">
+                    <option value="Python">Python</option>
+                    <option value="Javascript">Javascript</option>
+                </select>
+            </div>
+            <div class="comment-container">
+                <label for="comment">Comment(optional):</label>
+                <textarea id="comment" name="comment"></textarea>
+            </div>
+            <div class="submit-container">
+                <input type="submit" value="Submit" id="submitButton" />
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>
