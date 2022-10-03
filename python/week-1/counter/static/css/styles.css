@@ -1,0 +1,14 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	text-align: center;
+	width: 800px;
+	margin: 50px auto;
+}
+
+body > * {
+	margin: 10px;
+}
