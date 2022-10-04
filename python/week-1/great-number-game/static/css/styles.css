@@ -1,0 +1,44 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-family: monospace;
+}
+
+body,
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+}
+
+body {
+	margin: 100px auto;
+}
+
+.resultWindow {
+	border: 2px solid black;
+	width: 150px;
+	height: 150px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	font-weight: bold;
+	font-size: large;
+}
+
+.green {
+	background-color: green;
+}
+
+.red {
+	background-color: red;
+}
+
+input[type="button"],
+input[type="submit"] {
+	padding: 5px 10px;
+}
