@@ -1,8 +1,5 @@
 from flask_app import app
-
-
-app = Flask(__name__)
-app.secret_key = ""
+from flask_app.controllers import controller_routes, controller_cards, controller_users
 
 if __name__ == "__main__":
     app.run(debug=True)

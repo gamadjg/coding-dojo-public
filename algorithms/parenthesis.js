@@ -1,18 +1,9 @@
 /*
-- loop through the array
-- push all parenthesis and brackets into an array
-
 W(a{t}s[o(n{ c}o)m]e )h[e{r}e]!
 ({}[({})])[{}]
 () = +1       +1        -1  -1
 {} =   +1(-1)     +1(-1)        +1(-1)
 [] =        +1            -1  +1      -1
-
-- a bracket cant close if the child opened and didn't close within
-
-parent = 1  2
-child = 1-1  1-1
-subchild = 1
 */
 
 function setHierarchy(str) {
@@ -95,10 +86,87 @@ function closingBlocks(str) {
 	let childDec = newHierarchy[3];
 	let subChildInc = newHierarchy[4];
 	let subChildDec = newHierarchy[5];
-	let openedAt = false;
+	let openedAt = 0;
 	for (let i = 0; i <= str.length - 1; i++) {
-		if ((parent === 0) & (child === 0) & (subChild === 0) & (openedAt === 0)) {
-			newHierarchy = setHierarchy(str.substring(i, str.length));
+		switch (str[i]) {
+			case parentInc:
+				parent++;
+				child++;
+				subChild++;
+				parentOpenedAt = openedAt;
+				openedAt += 3;
+				console.log(
+					`parent+:\n    ${parent}, ${child}, ${subChild}\n    ${openedAt}-- ${parentOpenedAt}, ${childOpenedAt}, ${subChildOpenedAt}`
+				);
+				break;
+			case parentDec:
+				openedAt -= 3;
+				if (openedAt != parentOpenedAt) {
+					console.log("parent close");
+					return false;
+				}
+				parent--;
+				child--;
+				subChild--;
+				parentOpenedAt = 0;
+				console.log(
+					`parent-:\n    ${parent}, ${child}, ${subChild}\n    ${openedAt}-- ${parentOpenedAt}, ${childOpenedAt}, ${subChildOpenedAt}`
+				);
+				break;
+			case childInc:
+				child++;
+				subChild++;
+				childOpenedAt = openedAt;
+				openedAt += 2;
+				console.log(
+					`child+:\n    ${parent}, ${child}, ${subChild}\n    ${openedAt}-- ${parentOpenedAt}, ${childOpenedAt}, ${subChildOpenedAt}`
+				);
+				break;
+			case childDec:
+				openedAt -= 2;
+				if (openedAt != childOpenedAt) {
+					console.log("child close");
+					return false;
+				}
+				child--;
+				subChild--;
+				childOpenedAt = 0;
+				console.log(
+					`child-:\n    ${parent}, ${child}, ${subChild}\n    ${openedAt}-- ${parentOpenedAt}, ${childOpenedAt}, ${subChildOpenedAt}`
+				);
+				break;
+			case subChildInc:
+				subChild++;
+				subChildOpenedAt = openedAt;
+				openedAt += 1;
+				console.log(
+					`subChild+:\n    ${parent}, ${child}, ${subChild}\n    ${openedAt}-- ${parentOpenedAt}, ${childOpenedAt}, ${subChildOpenedAt}`
+				);
+				break;
+			case subChildDec:
+				openedAt -= 1;
+				if (openedAt != subChildOpenedAt) {
+					console.log("subChild close");
+					return false;
+				}
+				subChild--;
+				subChildOpenedAt = 0;
+				console.log(
+					`subChild-:\n    ${parent}, ${child}, ${subChild}\n    ${openedAt}-- ${parentOpenedAt}, ${childOpenedAt}, ${subChildOpenedAt}`
+				);
+				break;
+			default:
+				console.log("default");
+				return false;
+		}
+		if (
+			(parent === 0) &
+			(child === 0) &
+			(subChild === 0) &
+			(openedAt === 0) &
+			(i != str.length - 1)
+		) {
+			newHierarchy = setHierarchy(str.substring(i + 1, str.length));
 			if (newHierarchy == false) {
 				return false;
 			} else {
@@ -108,98 +176,18 @@ function closingBlocks(str) {
 				childDec = newHierarchy[3];
 				subChildInc = newHierarchy[4];
 				subChildDec = newHierarchy[5];
-				parentOpenedAt = 0;
-				childOpenedAt = 0;
-				subChildOpenedAt = 0;
 			}
 		}
 
-		switch (str[i]) {
-			case parentInc:
-				openedAt += 3;
-				parent++;
-				child++;
-				subChild++;
-				parentOpenedAt = parent + child + subChild;
-				console.log(
-					`parent+: ${parent}, ${child}, ${subChild},---- ${parentOpenedAt}, ${childOpenedAt}, ${subChildOpenedAt}`
-				);
-				break;
-			case parentDec:
-				openedAt -= 3;
-				parentOpenedAt = parent + child + subChild;
-				console.log(openedAt);
-
-				console.log(
-					`parent-: ${parent}, ${child}, ${subChild},---- ${parentOpenedAt}, ${childOpenedAt}, ${subChildOpenedAt}`
-				);
-				if (openedAt != parentOpenedAt - 3) {
-					console.log("parent close");
-					return false;
-				}
-				parent--;
-				child--;
-				subChild--;
-				// openedAt -= 3;
-				console.log(
-					`parent-: ${parent}, ${child}, ${subChild},---- ${parentOpenedAt}, ${childOpenedAt}, ${subChildOpenedAt}`
-				);
-				break;
-			case childInc:
-				openedAt += 2;
-				child++;
-				subChild++;
-				childOpenedAt = parent + child + subChild;
-				console.log(
-					`child+: ${parent}, ${child}, ${subChild},---- ${parentOpenedAt}, ${childOpenedAt}, ${subChildOpenedAt}`
-				);
-				break;
-			case childDec:
-				if (openedAt != parent + child + subChild) {
-					console.log("child close");
-					return false;
-				}
-				openedAt -= 2;
-				child--;
-				subChild--;
-				childOpenedAt = parent + child + subChild;
-				console.log(
-					`child-: ${parent}, ${child}, ${subChild},---- ${parentOpenedAt}, ${childOpenedAt}, ${subChildOpenedAt}`
-				);
-				break;
-			case subChildInc:
-				openedAt += 1;
-				subChild++;
-				subChildOpenedAt = parent + child + subChild;
-				console.log(
-					`subChild+: ${parent}, ${child}, ${subChild},---- ${parentOpenedAt}, ${childOpenedAt}, ${subChildOpenedAt}`
-				);
-				break;
-			case subChildDec:
-				if (openedAt != parent + child + subChild) {
-					console.log("subChild close");
-					return false;
-				}
-				openedAt -= 1;
-				subChild--;
-				subChildOpenedAt = parent + child + subChild;
-				console.log(
-					`subChild-: ${parent}, ${child}, ${subChild},---- ${parentOpenedAt}, ${childOpenedAt}, ${subChildOpenedAt}`
-				);
-				break;
-			default:
-				console.log("default");
-				return false;
-		}
 		if ((parent > child) | (child > subChild)) {
 			console.log(
-				`heirarchy: ${parent}, ${child}, ${subChild},---- ${parentOpenedAt}, ${childOpenedAt}, ${subChildOpenedAt}`
+				`heirarchy: ${parent}, ${child}, ${subChild},--${openedAt}-- ${parentOpenedAt}, ${childOpenedAt}, ${subChildOpenedAt}`
 			);
 			return false;
 		}
 		if ((parent < 0) | (child < 0) | (subChild < 0)) {
 			console.log(
-				`less than 0: ${parent}, ${child}, ${subChild},---- ${parentOpenedAt}, ${childOpenedAt}, ${subChildOpenedAt}`
+				`less than 0: ${parent}, ${child}, ${subChild},--${openedAt}-- ${parentOpenedAt}, ${childOpenedAt}, ${subChildOpenedAt}`
 			);
 			return false;
 		}
@@ -215,46 +203,5 @@ let st1 = "({}[({})])[{}]";
 let st2 = "({}[]){";
 let st3 = "()[(]{)}";
 console.log(closingBlocks(st1)); // true
-// console.log(closingBlocks(st2));
-// console.log(closingBlocks(st3));
-
-/* 
-Parens Valid
-Given an str that has parenthesis in it
-return whether the parenthesis are valid
-*/
-
-// const str1 = "Y(3(p)p(3)r)s";
-// const expected1 = true;
-
-// const str2 = "N(0(p)3";
-// const expected2 = false;
-// // Explanation: not every parenthesis is closed.
-
-// const str3 = "N(0)t ) 0(k";
-// const expected3 = false;
-// // Explanation: because the second ")" is premature: there is nothing open for it to close.
-
-// const str4 = "a(b))(c";
-// const expected4 = false;
-// // Explanation: same number of opens and closes but the 2nd closing closes nothing.
-
-// function parensValid(str) {}
-
-// /*****************************************************************************/
-
-// /*
-// Braces Valid
-// Given a string sequence of parentheses, braces and brackets, determine whether it is valid.
-// */
-
-// const two_str1 = "W(a{t}s[o(n{ c}o)m]e )h[e{r}e]!";
-// const two_expected1 = true;
-
-// const two_str2 = "D(i{a}l[ t]o)n{e";
-// const two_expected2 = false;
-
-// const two_str3 = "A(1)s[O (n]0{t) 0}k";
-// const two_expected3 = false;
-
-// function bracesValid(str) {}
+console.log(closingBlocks(st2)); // false
+console.log(closingBlocks(st3)); // false
