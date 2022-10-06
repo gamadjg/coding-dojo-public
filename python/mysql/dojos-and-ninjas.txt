@@ -1,0 +1,48 @@
+-- Create 3 new dojos
+INSERT INTO dojos (name)
+values ('Coding Dojo'), ('Ninja Dojo'), ('Sushi Dojo');
+
+-- Read dojos
+SELECT * FROM dojos;
+
+-- Read ninjas
+SELECT * FROM ninjas;
+
+-- Read all ninja's from the 1st dojo
+SELECT * FROM ninjas WHERE dojo_id = 4;
+
+-- Read all ninja's from the 3rd dojo
+SELECT * FROM ninjas WHERE dojo_id = 6;
+
+-- Read the last ninja's dojo
+SELECT dojos.name 
+FROM ninjas
+JOIN dojos on ninjas.dojo_id = dojos.id WHERE ninjas.id = 9;
+
+-- Delete the 3 newly created dojos
+DELETE FROM dojos WHERE id = 1 OR id = 2 OR id = 3;
+
+— Create 3 ninjas
+INSERT INTO ninjas (first_name, last_name, age, dojo_id)
+VALUES 
+    (‘David’, ‘Gama’, 30, 4), 
+    (‘Aaron’, ‘Gama’, 22, 5), 
+    (‘Miso’, ‘Doggo’, 4, 6);
+
+— Create another 3 ninjas
+INSERT INTO ninjas (first_name, last_name, age, dojo_id)
+VALUES 
+    (’Shasta’, 'Doggo', 3, 4), 
+    (‘Mia’, ‘Doggo’, 10, 5), 
+    (‘Rocky’, ‘Doggo’, 6, 6);
+
+
+-- Create 3 more ninjas
+INSERT INTO ninjas (first_name, last_name, age, dojo_id)
+VALUES 
+    ('Twister', 'Doggo', 12, 4), 
+    ('Michelle', 'Hache', 30, 5), 
+    ('Lex', 'Fridman', 36, 6);
+
+
+
