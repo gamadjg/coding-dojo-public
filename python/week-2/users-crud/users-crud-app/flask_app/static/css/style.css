@@ -1,0 +1,36 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: monospace;
+}
+
+main {
+	width: 800px;
+	margin: 10px auto;
+}
+
+.label {
+	margin: 5px 0 0 0;
+}
+
+.form_button {
+	margin-top: 10px;
+}
+
+.action-row {
+	display: flex;
+}
+
+.navbar {
+	width: 800px;
+	margin: 10px auto;
+	padding: 10px 0;
+	display: flex;
+	justify-content: space-between;
+}
+
+.list {
+	list-style: none;
+	display: flex;
+	gap: 10px;
+}

@@ -1,0 +1,28 @@
+<table class="table">
+    <tbody>
+        <tr>
+            <th>Full Name</th>
+            <td>{{ user['first_name'] }} {{ user['last_name'] }}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{ user['email'] }}</td>
+        </tr>
+        <tr>
+            <th>Created On</th>
+            <td>{{ user['created_at'] }}</td>
+        </tr>
+        <tr>
+            <th>Last Updated On</th>
+            <td>{{ user['updated_at'] }}</td>
+        </tr>
+        <tr>
+            <th></th>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+<ul class="list">
+    <li><a href="/users/{{user['id']}}/edit">Edit</a></li> |
+    <li><a href="/users/{{user['id']}}/delete">Delete</a></li>
+</ul>
