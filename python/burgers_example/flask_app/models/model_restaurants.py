@@ -17,7 +17,8 @@ class Restaurant:
     def get_restaurant_with_burgers(cls, data):
         query = "SELECT * FROM restaurants LEFT JOIN burgers ON burgers.restaurant_id = restaurants.id WHERE restaurants.id = %(id)s;"
         results = connectToMySQL(DATABASE).query_db(query, data)
-        # results will be a list of topping objects with the burger attached to each row.
+        # results will be all columns + data of the joined tables
+        # dict_keys(['id', 'name', 'created_at', 'updated_at', 'burgers.id', 'burgers.name', 'bun', 'meat', 'calories', 'burgers.created_at', 'burgers.updated_at', 'restaurant_id'])
 
         # Create restaurant object
         # cls() calls the class constructor of the class that we're currently in: Restaurant ->__init__()
@@ -25,6 +26,7 @@ class Restaurant:
 
         # Calling the class by it's name does the same thing
         restaurant = Restaurant(results[0])
+        print(restaurant.name)
         for row_from_db in results:
             # Now we parse the burger data to make instances of burgers and add them into our list.
             burger_data = {
