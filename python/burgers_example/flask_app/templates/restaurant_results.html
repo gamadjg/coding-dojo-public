@@ -1,0 +1,16 @@
+<div class="d-flex justify-content-around flex-wrap p-5">
+    {% for restaurant in restaurants %}
+    <div class="card col-3 bg-dark text-light">
+        <div class="card-body">
+            <h2 class="card-title text-primary"><a href="/show/restaurant/{{restaurant['id']}}">{{ restaurant['name']
+                    }}</a>
+            </h2>
+        </div>
+        <div class="card-footer">
+            <p class="card-subtitle">Created on: {{ restaurant['created_at'].strftime("%B %d, %Y at %H:%M:%S") }}
+            </p>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>

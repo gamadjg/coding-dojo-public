@@ -1,0 +1,21 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+main {
+	width: 800px;
+	margin: 50px auto auto 50px;
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.dojo_list {
+	border: 2px solid black;
+}
+
+ul {
+	list-style: none;
+	padding: 5px;
+}
