@@ -1,10 +1,12 @@
 SELECT * FROM dojos;
 
+DELETE FROM ninjas WHERE id = 9; 
+
 SELECT * FROM ninjas;
 
 select * from ninjas join dojos on ninjas.id = dojos.id;
 
-SELECT * FROM dojos LEFT JOIN ninjas ON ninjas.dojo_id = dojos.id WHERE dojos_id = 1;
+SELECT * FROM dojos LEFT JOIN ninjas ON ninjas.dojo_id = dojos.id WHERE dojos.id = 1;
 
 Select * from dojos where dojos.id = 1;
 
