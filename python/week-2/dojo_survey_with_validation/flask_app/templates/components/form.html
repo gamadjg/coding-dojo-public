@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% block title %}
+Dojo Survey Index
+{% endblock title %}
+{% block body%}
+<form class="content-container" action="/process" method="post">
+    <p class="form-title">Dojo Survey</p>
+    <div class="name-container">
+        <label for="name">Your Name:</label>
+        <input type="text" name="name" id="name" />
+    </div>
+    {% for message in get_flashed_messages(category_filter=['err_name']) %}
+    <p class="alert alert-danger">{{ message }}</p>
+    {% endfor %}
+    <div class="dojoLocation-container">
+        <label for="location">Dojo Location:</label>
+        <div>
+            <input type="radio" id="sanJoseRadio" name="location" value="San Jose" />
+            <label for="sanJoseRadio">San Jose</label>
+            <input type="radio" id="newYorkRadio" name="location" value="New York" />
+            <label for="newYorkRadio">New York</label>
+        </div>
+    </div>
+    {% for message in get_flashed_messages(category_filter=['err_location']) %}
+    <p class="alert alert-danger">{{ message }}</p>
+    {% endfor %}
+    <div class="favoriteLanguage-container">
+        <label for="favorite_language">Favorite Language:</label>
+        <select id="favorite_language" name="favorite_language">
+            <option value="Python">Python</option>
+            <option value="Javascript">Javascript</option>
+        </select>
+    </div>
+    <div class="comment-container">
+        <label for="comment">Comment(optional):</label>
+        <textarea id="comment" name="comment"></textarea>
+    </div>
+    <div class="submit-container">
+        <input type="submit" value="Submit" id="submitButton" />
+    </div>
+</form>
+{% endblock body%}

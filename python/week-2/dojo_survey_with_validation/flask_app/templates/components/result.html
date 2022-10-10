@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% block title %}
+Dojo Survey Index
+{% endblock title %}
+{% block body %}
+<div class="content-container">
+    <p class="form-title">Submitted Info</p>
+    <div class="name-container">
+        <label>Name:</label>
+        <p>{{user['name']}}</p>
+    </div>
+    <div class="dojoLocation-container">
+        <label>Location:</label>
+        <p>{{user['location']}}</p>
+    </div>
+    <div class="favoriteLanguage-container">
+        <label>Favorite Language:</label>
+        <p>{{user['favorite_language']}}</p>
+    </div>
+    <div class="comment-container">
+        <label>Comment:</label>
+        <p id="commentResult">{{user['comment']}}</p>
+    </div>
+    <div>
+        <a href="/">
+            <button>Return</button>
+        </a>
+    </div>
+</div>
+{% endblock body %}

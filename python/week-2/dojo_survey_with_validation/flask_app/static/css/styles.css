@@ -1,0 +1,62 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: monospace;
+}
+
+main {
+	margin: 100px auto;
+	width: 600px;
+}
+
+.content-container {
+	display: flex;
+	margin: 10px;
+	padding: 10px;
+	flex-direction: column;
+	border: 2px solid black;
+}
+
+.content-container > * {
+	display: flex;
+	justify-content: space-between;
+	margin: 10px;
+	align-items: center;
+}
+
+.content-container > * > * {
+	padding: 5px;
+	align-items: center;
+}
+
+.submit-container {
+	display: flex;
+	justify-content: flex-end;
+}
+
+#submitButton {
+	padding: 0px 10px;
+}
+
+#comment {
+	min-width: 200px;
+	min-height: 15px;
+}
+
+#commentResult {
+	word-break: break-all;
+	white-space: normal;
+}
+
+a {
+	display: inline-block;
+}
+
+button {
+	padding: 5px 10px;
+}
+
+.form-title {
+	font-size: x-large;
+	text-decoration: underline;
+}
