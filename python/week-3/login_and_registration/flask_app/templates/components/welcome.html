@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+{% block title %}
+Welcome!
+{% endblock title %}
+{% block body %}
+<div>
+    <h1> Welcome {{user['first_name']}}!</h1>
+    <a href="/logout"><button>Logout</button></a>
+</div>
+{% endblock body %}

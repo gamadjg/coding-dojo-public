@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+{% block title %}
+Login & Registration
+{% endblock title %}
+{% block body%}
+<div class="col">
+    <form class="content_container" action="/register" method="post">
+        <p class="col_title">Register</p>
+
+        <!-- <div class="form_container"> -->
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name" id="first_name" />
+        <!-- </div> -->
+        {% for message in get_flashed_messages(category_filter=['err_first_name_registration']) %}
+        <p class="alert alert-danger">{{ message }}</p>
+        {% endfor %}
+
+        <!-- <div class="form_container"> -->
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" id="last_name" />
+        <!-- </div> -->
+        {% for message in get_flashed_messages(category_filter=['err_last_name_registration']) %}
+        <p class="alert alert-danger">{{ message }}</p>
+        {% endfor %}
+
+        <!-- <div class="form_container"> -->
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" />
+        <!-- </div> -->
+        {% for message in get_flashed_messages(category_filter=['err_email_registration']) %}
+        <p class="alert alert-danger">{{ message }}</p>
+        {% endfor %}
+
+        <!-- <div class="form_container"> -->
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" />
+        <!-- </div> -->
+        {% for message in get_flashed_messages(category_filter=['err_password_registration']) %}
+        <p class="alert alert-danger">{{ message }}</p>
+        {% endfor %}
+
+        <!-- <div class="form_container"> -->
+        <label for="confirmation_password">Confirm Password</label>
+        <input type="password" id="confirmation_password" name="confirmation_password" />
+        <!-- </div> -->
+        {% for message in get_flashed_messages(category_filter=['err_confirmation_password_registration']) %}
+        <p class="alert alert-danger">{{ message }}</p>
+        {% endfor %}
+
+        <div class="submit-container">
+            <input type="submit" value="Register" id="submitButton" />
+        </div>
+    </form>
+</div>
+<div class="col">
+    <p class="col_title">Login</p>
+    <form class="content_container" action="/login" method="post">
+        <!-- <div class="form_container"> -->
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" />
+        <!-- </div> -->
+        {% for message in get_flashed_messages(category_filter=['err_email_login']) %}
+        <p class="alert alert-danger">{{ message }}</p>
+        {% endfor %}
+
+        <!-- <div class="form_container"> -->
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" />
+        <!-- </div> -->
+        {% for message in get_flashed_messages(category_filter=['err_password_login']) %}
+        <p class="alert alert-danger">{{ message }}</p>
+        {% endfor %}
+
+        <div class="submit-container">
+            <input type="submit" value="Login" id="submitButton" />
+        </div>
+    </form>
+</div>
+{% endblock body%}
