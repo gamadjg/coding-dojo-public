@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Recipe Share
+{% endblock title %}
+
+{% block navbar %}
+<div class="col nav_left">
+    <h1 class="nav_title">Welcome, {{session['first_name']}}</h1>
+    <p class="subtext">All posted recipes</p>
+</div>
+<div class="col nav_right">
+    <a href="/recipes/new">+ Create</a>
+    <a href="/logout">Logout</a>
+</div>
+
+{% endblock navbar %}
+
+{% block body%}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Under 30</th>
+            <th>Posted By</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for recipe in recipes:%}
+        <tr>
+            <td>{{recipe.name}}</td>
+            <td>{% if recipe['under_30']: %}
+                Yes
+                {% else: %}
+                No
+                {% endif %}</td>
+            <td>{{recipe['user_fn']}}</td>
+            <td>
+                <a href="/recipes/{{recipe.id}}">view recipe</a>
+                {% if recipe['user_id'] == session['uuid']: %}
+                |<a href="/recipes/edit/{{recipe.id}}">edit</a>|
+                <a href="/recipes/delete/{{recipe.id}}">delete</a>
+                {% endif %}
+            </td>
+        </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
+{% for recipe in recipes: %}
+
+{% endfor %}
+
+{% endblock body%}

@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block navbar %}
+<div class="col nav_left">
+    <h1 class="nav_title">Welcome, {{session['first_name']}}</h1>
+    <p class="subtext large">{{recipe['name']}}</p>
+</div>
+<div class="col nav_right">
+    <div>
+        <a href="/recipes">Back to recipes</a>
+        <a href="/logout">Logout</a>
+    </div>
+    <p class="subtext poster">Posted by: {{recipe['first_name']}}</p>
+</div>
+{% endblock navbar %}
+
+{% block body%}
+<div class="show_body">
+    <div class="show_container">
+        <p class="show_title">Description</p>
+        <p class="show_content">{{recipe['']}}</p>
+    </div>
+</div>
+
+
+{% endblock body%}

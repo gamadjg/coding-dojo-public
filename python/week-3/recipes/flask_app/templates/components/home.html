@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Recipe Share
+{% endblock title %}
+
+{% block navbar %}
+<div class="col nav_left">
+    <h1 class="nav_title home_title">Recipe Share</h1>
+</div>
+{% endblock navbar %}
+
+{% block body%}
+<div class="col main">
+    <div class="title">Register</div>
+    {% include '/components/registration_form.html' %}
+</div>
+<div class="col main">
+    <div class="title">Login</div>
+    {% include '/components/login_form.html' %}
+</div>
+{% endblock body%}
