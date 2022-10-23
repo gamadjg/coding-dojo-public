@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+    <title>Weather Forecast</title>
+</head>
+c11d16b0
+
+<body>
+    <div id="nav-bar">
+        <h1 id="nav-title">DojoWeather</h1>
+        <ul id="nav-list">
+            <li><a class="nav-city" onclick="getCity(this)">Burbank</a></li>
+            <li><a class="nav-city" onclick="getCity(this)">Chicago</a></li>
+            <li><a class="nav-city" onclick="getCity(this)">Dallas</a></li>
+        </ul>
+    </div>
+    <div id="main">
+        <div id="main-header">
+            <h1 id="main-header-city">San Jose</h1>
+            <div id="main-header-right">
+                <label for="temp-selector" id="temp-selector-text">Show temperature in</label>
+                <select id="temp-selector" name="temp-selector" onchange="tempSelect(this)">
+                    <option id="celsius" value="celsius">C</option>
+                    <option id="fahrenheit" value="fahrenheit">F</option>
+                </select>
+            </div>
+        </div>
+        <div id="main-body">
+            <div class="card">
+                <h1 class="card-title">Today</h1>
+                <img class="card-weather-pic" src="static/images/some_rain.png" alt="Rainy cloud icon">
+                <p class="card-description">some rain</p>
+                <div class="weather-temps">
+                    <div class="temp-left">
+                        <span class="celsius">24</span>
+                        &deg;
+                    </div>
+                    <div class="temp-right">
+                        <span class="celsius">18</span>
+                        &deg;
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h1 class="card-title">Tomorrow</h1>
+                <img class="card-weather-pic" src="static/images/some_sun.png" alt="Sun icon">
+                <p class="card-description">some sun</p>
+                <div class="weather-temps">
+                    <div class="temp-left">
+                        <span class="celsius">27</span>
+                        &deg;
+                    </div>
+                    <div class="temp-right">
+                        <span class="celsius">19</span>
+                        &deg;
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h1 class="card-title">Friday</h1>
+                <img class="card-weather-pic" src="static/images/some_clouds.png" alt="Cloud icon">
+                <p class="card-description">some clouds</p>
+                <div class="weather-temps">
+                    <div class="temp-left">
+                        <span class="celsius">21</span>
+                        &deg;
+                    </div>
+                    <div class="temp-right">
+                        <span class="celsius">16</span>
+                        &deg;
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h1 class="card-title">Saturday</h1>
+                <img class="card-weather-pic" src="static/images/some_sun.png" alt="Sun icon">
+                <p class="card-description">some sun</p>
+                <div class="weather-temps">
+                    <div class="temp-left">
+                        <span class="celsius">26</span>
+                        &deg;
+                    </div>
+                    <div class="temp-right">
+                        <span class="celsius">21</span>
+                        &deg;
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="cookies-container">
+        <img src="static/images/cookie.png" alt='Internet cookies image' />
+        <div id="cookie-body">
+            <h1 id="cookie-body-header">Stop! Cookie time</h1>
+            <p id="cookie-body-body">We use cookies (sadly not the edible ones) to personalize content and ads, to
+                provide
+                social media features and to analyse our traffic. <a href="#">Read more...</a>
+            </p>
+        </div>
+        <input type="button" id="cookie-btn" value="I Accept" onclick="closeCookieContainer(this)" />
+    </div>
+    <script src="{{url_for('static',filename='js/script.js')}}"></script>
+</body>
+
+</html>
