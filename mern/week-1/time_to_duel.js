@@ -34,25 +34,47 @@ class Effect extends Card {
 		console.log(
 			`${this.name} performed on ${target.name}, affecting ${this.stat} for ${this.magnitude}`
 		);
-		//
 		target[this.stat] += parseInt(this.magnitude);
 	}
 }
 
-david = new Unit("David", 10, 2, 5);
-aaron = new Unit("Aaron", 10, 2, 10);
-
-pull_neck = new Effect(
-	"pull neck",
+hard_algorithm = new Effect(
+	"Hard Algorithm",
 	2,
-	"Didn't stretch, reduce resistance by 2",
+	"Increase target's resilience by 3",
+	"res",
+	"+3"
+);
+
+unhandled_promise_rejection = new Effect(
+	"Unhandled Promise Rejection",
+	1,
+	"Reduce target's resilience by 2",
 	"res",
 	"-2"
 );
 
-david.print();
-aaron.print();
-david.attack(aaron);
-aaron.print();
-pull_neck.perform_on(david);
-david.print();
+pair_programming = new Effect(
+	"Pair Programming",
+	3,
+	"Increase target's power by 2",
+	"power",
+	"+2"
+);
+
+red_belt_ninja = new Unit("Red Belt Ninja", 3, 3, 4);
+black_belt_ninja = new Unit("Black Belt Ninja", 4, 5, 4);
+red_belt_ninja.print();
+black_belt_ninja.print();
+
+hard_algorithm.perform_on(red_belt_ninja);
+red_belt_ninja.print();
+
+unhandled_promise_rejection.perform_on(red_belt_ninja);
+red_belt_ninja.print();
+
+pair_programming.perform_on(red_belt_ninja);
+red_belt_ninja.print();
+
+red_belt_ninja.attack(black_belt_ninja);
+black_belt_ninja.print();
