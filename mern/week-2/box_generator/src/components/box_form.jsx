@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../box_generator.css";
 
 const BoxForm = (props) => {
 	const [message, setMessage] = useState("");
@@ -6,7 +7,7 @@ const BoxForm = (props) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		props.handleNewMsg(message);
-		// console.log(message);
+		setMessage("");
 	};
 
 	const handleChange = (e) => {
