@@ -1,0 +1,15 @@
+form {
+	margin: 10px;
+}
+
+.box_container {
+	margin: 20px;
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+
+.box {
+	width: 200px;
+	height: 200px;
+}
