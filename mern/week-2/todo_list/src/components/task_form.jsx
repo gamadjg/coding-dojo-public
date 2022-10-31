@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../style.css";
 
-const TaskForm = () => {
+const TaskForm = (props) => {
 	const [task, setTask] = useState("");
 	// const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -11,7 +11,7 @@ const TaskForm = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(task);
+		props.handleNewTask(task);
 	};
 
 	return (
