@@ -13,3 +13,7 @@ form {
 	width: 200px;
 	height: 200px;
 }
+
+.rowChecked {
+	text-decoration: line-through;
+}
