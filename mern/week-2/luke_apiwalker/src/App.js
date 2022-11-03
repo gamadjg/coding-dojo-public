@@ -1,19 +1,22 @@
 import "./App.css";
-// import { useState } from "react";
-// import { useParams } from "react-router";
 import "./App.css";
-// import { Routes, Route, Link, useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import NavSearch from "./components/navSearch";
+import Results from "./components/results";
+
+const Home = (props) => {
+	return <div></div>;
+};
 
 function App() {
 	return (
 		<div className="App">
 			<h1>Luke APIwalker</h1>
 			<NavSearch />
-			{/* <Routes>
-				<Route path="/about" element={<About />} />
+			<Routes>
+				<Route path="/results/:category/:id" element={<Results />} />
 				<Route path="/" element={<Home />} />
-			</Routes> */}
+			</Routes>
 		</div>
 	);
 }

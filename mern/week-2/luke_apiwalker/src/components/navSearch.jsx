@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-const NavSearch = () => {
+const NavSearch = (props) => {
 	const [categoryList, setCategoryList] = useState([]);
-	const [category, setCategory] = useState([]);
+	const [itemId, setItemId] = useState("");
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		axios
 			.get("https://swapi.dev/api/")
 			.then((response) => {
-				console.log(response.data);
 				let responseList = [];
 				for (const value in response.data) {
 					responseList.push(value);
@@ -23,27 +24,36 @@ const NavSearch = () => {
 
 	const handleForm = (e) => {
 		e.preventDefault();
-		console.log(e.target);
+		let category = e.target.dropdown.value;
+		navigate(`/results/${category}/${itemId}`);
+	};
+
+	const handleInput = (e) => {
+		setItemId(e.target.value);
 	};
 
 	return (
 		<div className="navSearch">
 			<div>
-				<label htmlFor="dropdown">Search for people:</label>
-				<select id="dropdown" name="dropdown">
-					{categoryList.map((category, id) => {
-						return (
-							<option key={id} value={category}>
-								{category}
-							</option>
-						);
-					})}
-				</select>
-			</div>
-			<div>
 				<form onSubmit={handleForm}>
-					<label htmlFor="itemId">ID: </label>
-					<input type="text" name="itemId" id="itemId" />
+					<label htmlFor="dropdown">Search for people:</label>
+					<select id="dropdown" name="dropdown">
+						{categoryList.map((category, id) => {
+							return (
+								<option key={id} value={category}>
+									{category}
+								</option>
+							);
+						})}
+					</select>
+					<label htmlFor="itemId"> ID: </label>
+					<input
+						type="text"
+						name="itemId"
+						id="itemId"
+						value={itemId}
+						onChange={handleInput}
+					/>
 					<button type="submit">Search</button>
 				</form>
 			</div>
