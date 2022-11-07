@@ -7,7 +7,7 @@ require("./config/mongoose.config");
 // app.use(cors());
 app.use(cors(), express.json(), express.urlencoded({ extended: true }));
 
-const app_routes = require("./routes/person.routes");
+const app_routes = require("./routes/product.routes");
 app_routes(app);
 
 app.listen(port, () => console.log(`Listening on port: ${port}`));

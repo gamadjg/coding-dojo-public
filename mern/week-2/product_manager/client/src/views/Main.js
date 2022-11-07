@@ -1,10 +1,10 @@
 import React from "react";
-import PersonForm from "../components/PersonForm";
+import ProductForm from "../components/ProductForm";
 
 const Main = () => {
 	return (
 		<div>
-			<PersonForm />
+			<ProductForm />
 		</div>
 	);
 };
