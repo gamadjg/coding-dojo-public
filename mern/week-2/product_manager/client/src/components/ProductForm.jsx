@@ -1,19 +1,24 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 const PersonForm = () => {
 	const [title, setTitle] = useState("");
 	const [price, setPrice] = useState(0);
 	const [description, setDescription] = useState("");
+	const navigate = useNavigate();
 
 	const onSubmitHandler = (e) => {
-		e.preventDefault();
+		// e.preventDefault();
 		axios
-			.post("http://localhost:8000/api/product/create", {
+			.post("http://localhost:8000/api/products/create", {
 				title,
 				price,
 				description,
 			})
-			.then((res) => console.log(res))
+			.then((res) => {
+				// navigate()
+			})
 			.catch((err) => console.log(err));
 	};
 
