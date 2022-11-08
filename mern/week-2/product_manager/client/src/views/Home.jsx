@@ -7,6 +7,10 @@ const Home = () => {
 	const [products, setProducts] = useState([]);
 	const [loaded, setLoaded] = useState(false);
 
+	const deleteProduct = (id) => {
+		setProducts(products.filter((product) => product._id !== id));
+	};
+
 	useEffect(() => {
 		axios
 			.get("http://localhost:8000/api/products")
@@ -20,7 +24,12 @@ const Home = () => {
 	return (
 		<div className="home">
 			<ProductForm />
-			{loaded && <ProductList products={products} />}
+			{loaded && (
+				<ProductList
+					products={products}
+					deleteProduct={(e) => deleteProduct(e)}
+				/>
+			)}
 		</div>
 	);
 };

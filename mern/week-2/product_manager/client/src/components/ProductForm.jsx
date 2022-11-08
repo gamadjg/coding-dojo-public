@@ -7,16 +7,13 @@ const PersonForm = () => {
 	const [description, setDescription] = useState("");
 
 	const onSubmitHandler = (e) => {
-		// e.preventDefault();
 		axios
 			.post("http://localhost:8000/api/products/create", {
 				title,
 				price,
 				description,
 			})
-			.then((res) => {
-				// navigate()
-			})
+			.then((res) => {})
 			.catch((err) => console.log(err));
 	};
 

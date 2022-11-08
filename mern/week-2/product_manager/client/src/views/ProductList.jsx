@@ -1,12 +1,21 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "../style.css";
 import axios from "axios";
 
 const ProductList = (props) => {
 	const deleteProduct = (e) => {
 		e.preventDefault();
-		// console.log(e.tart);
+		const id = e.target.dataset.id;
+		axios
+			.delete(`http://localhost:8000/api/products/${id}/delete`)
+			.then((res) => props.deleteProduct(id))
+			.catch((err) => {
+				console.log({
+					message: "Couldn't no delete product.",
+					error: err,
+				});
+			});
 	};
 
 	return (
@@ -23,7 +32,8 @@ const ProductList = (props) => {
 						</Link>
 						<Link
 							onClick={deleteProduct}
-							to={`/${product._id}/delete`}
+							data-id={product._id}
+							to="#"
 							className="product_link"
 						>
 							Delete
