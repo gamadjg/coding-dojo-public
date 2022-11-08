@@ -2,7 +2,7 @@ const AuthorController = require("../controllers/author.controller");
 
 module.exports = function (app) {
 	// INDEX
-	app.get("/api", AuthorController.index);
+	app.get("/api", AuthorController.connectionTest);
 	// GET ALL
 	app.get("/api/authors", AuthorController.getAll);
 	// GET ONE
@@ -10,7 +10,7 @@ module.exports = function (app) {
 	// POST
 	app.post("/api/authors/create", AuthorController.create);
 	// PUT ONE
-	// app.put("/api/authors/:id/edit", AuthorController.update);
+	app.put("/api/authors/:id/edit", AuthorController.update);
 	// DELETE ONE
-	// app.delete("/api/authors/:id/delete", AuthorController.delete);
+	app.delete("/api/authors/:id/delete", AuthorController.delete);
 };
