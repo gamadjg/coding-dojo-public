@@ -1,0 +1,13 @@
+{
+	"players": [
+		{
+			"name": "David",
+			"position": "Forward",
+			"games": {
+				"1": "playing",
+				"2": "not playing",
+				"3": "undecided"
+			}
+		}
+	]
+}
