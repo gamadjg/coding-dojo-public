@@ -61,3 +61,10 @@ button {
 	border-radius: 10px;
 	/* margin: 5px; */
 }
+
+.tab_container {
+	display: flex;
+	margin: auto;
+	justify-content: center;
+	gap: 20px;
+}

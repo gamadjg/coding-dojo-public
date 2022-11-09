@@ -4,33 +4,51 @@ import PlayerStatus from "./views/PlayerStatus";
 // import PlayerEdit from "./views/PlayerEdit";
 import "./assets/App.css";
 import "./assets/style.css";
-import { useEffect } from "react";
-import { useNavigate } from "react-router";
-import { Routes, Route, Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+// import { useNavigate } from "react-router";
+import { Routes, Route } from "react-router-dom";
+import Nav from "./views/Nav";
+// import PreLoad from "./views/PreLoad";
+import axios from "axios";
 
 function App() {
-	const Landing = () => {
-		const navigate = useNavigate();
+	// const navigate = useNavigate();
+	const [players, setPlayers] = useState([]);
+	// const [playersLoaded, setPlayersLoaded] = useState(false);
 
-		useEffect(() => {
-			navigate("/players/list");
-		});
+	useEffect(() => {
+		axios
+			.get("http://localhost:8000/api/players")
+			.then((res) => {
+				setPlayers(res.data);
+				// setPlayersLoaded(true);
+			})
+			.catch((err) => console.error(err));
+	});
+
+	const removePlayer = (player_id) => {
+		console.log("Removing player: " + player_id);
+		setPlayers(players.filter((player) => player._id !== player_id));
 	};
 
 	return (
 		<div className="App">
-			<h1>Favorite Players</h1>
-			<div>
-				<Link to={"/players/list"}>Manager Players</Link>
-				<div>|</div>
-				<Link to={"/status/game/1"}>Manager Player Status</Link>
-			</div>
+			<Nav />
 			<Routes>
-				<Route path="/" element={<Landing />} />
-				<Route path="/players/list" element={<ManagePlayers />} />
-				<Route path="/status/game/:game_id" element={<PlayerStatus />} />
-				{/* <Route path="/players/addplayer" element={<PlayerNew />} /> */}
-				{/* <Route path="/edit/:id/" element={<PlayerEdit />} /> */}
+				<Route path="/" element={<div></div>} />
+				<Route
+					path="/players/list"
+					element={
+						<ManagePlayers
+							initialPlayers={players}
+							removePlayer={removePlayer}
+						/>
+					}
+				/>
+				<Route
+					path="/status/game/:game_id"
+					element={<PlayerStatus initialPlayers={players} />}
+				/>
 			</Routes>
 		</div>
 	);

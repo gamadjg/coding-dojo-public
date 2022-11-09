@@ -4,20 +4,28 @@ import axios from "axios";
 import PlayerList from "./PlayerList";
 import PlayerNew from "./PlayerNew";
 
-const ManagePlayers = () => {
+const ManagePlayers = (props) => {
+	const { initialPlayers, removePlayer } = props;
+	// console.log(initialPlayers);
 	const [players, setPlayers] = useState([]);
 	const [loaded, setLoaded] = useState(false);
 	const [view, setView] = useState("list");
 
 	useEffect(() => {
-		axios
-			.get("http://localhost:8000/api/players")
-			.then((res) => {
-				setPlayers(res.data);
-				setLoaded(true);
-			})
-			.catch((err) => console.error(err));
-	}, []);
+		// console.log(initialPlayers);
+		setPlayers(initialPlayers);
+		setLoaded(true);
+	}, [initialPlayers]);
+
+	// useEffect(() => {
+	// 	axios
+	// 		.get("http://localhost:8000/api/players")
+	// 		.then((res) => {
+	// 			setPlayers(res.data);
+	// 			setLoaded(true);
+	// 		})
+	// 		.catch((err) => console.error(err));
+	// }, []);
 
 	const handleClick = (e) => {
 		e.preventDefault();
@@ -27,16 +35,22 @@ const ManagePlayers = () => {
 		if (view === "list" && selected !== "list") {
 			console.log("switch to new");
 			setView("new");
-		} else if (view === "new" && selected !== "new") {
+		}
+		// if view is currently set to "list", and "view" was selected, switch to "view", else do nothing
+		else if (view === "new" && selected !== "new") {
 			console.log("switch to list");
 			setView("list");
 		}
-		// if view is currently set to "list", and "view" was selected, switch to "view", else do nothing
+	};
+
+	const remove = (player_id) => {
+		removePlayer(player_id);
+		// setPlayers(players.filter((player) => player._id !== player_id));
 	};
 
 	return (
 		<div className="main_container">
-			<div>
+			<div className="page_nav">
 				<Link to={"#"} onClick={handleClick} data-select="list">
 					List
 				</Link>
@@ -48,7 +62,7 @@ const ManagePlayers = () => {
 			{!loaded ? (
 				<div>loading</div>
 			) : view === "list" ? (
-				<PlayerList initialPlayers={players} />
+				<PlayerList initialPlayers={players} removePlayer={remove} />
 			) : (
 				<PlayerNew />
 			)}

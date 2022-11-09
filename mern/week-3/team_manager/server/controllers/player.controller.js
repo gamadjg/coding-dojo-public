@@ -28,9 +28,7 @@ module.exports.create = (req, res) => {
 		},
 	})
 		.then((player) => res.json(player))
-		.catch((err) =>
-			res.json({ message: "ERROR, POST: Cannot create player.", error: err })
-		);
+		.catch((err) => res.status(400).json(err));
 };
 
 module.exports.update = (req, res) => {

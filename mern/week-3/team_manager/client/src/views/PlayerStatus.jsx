@@ -20,7 +20,7 @@ const PlayerStatus = () => {
 		// set players state
 	});
 
-	return <div className="main_container">Player Status</div>;
+	return <div className="main_container">{game_id}</div>;
 };
 
 export default PlayerStatus;
