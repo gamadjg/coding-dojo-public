@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const PlayerForm = (props) => {
 	const navigate = useNavigate();
@@ -12,7 +12,6 @@ const PlayerForm = (props) => {
 
 	const onSubmitHandler = (e) => {
 		e.preventDefault();
-		// console.log(name);
 		handlePlayer(name);
 	};
 

@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const port = 1337;
+const port = 8000;
 require("./config/mongoose.config");
 
 // app.use(cors());

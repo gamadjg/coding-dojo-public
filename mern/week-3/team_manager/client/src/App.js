@@ -4,13 +4,17 @@ import PlayerStatus from "./views/PlayerStatus";
 // import PlayerEdit from "./views/PlayerEdit";
 import "./assets/App.css";
 import "./assets/style.css";
+import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import { Routes, Route, Link } from "react-router-dom";
 
 function App() {
 	const Landing = () => {
 		const navigate = useNavigate();
-		navigate("/players/list");
+
+		useEffect(() => {
+			navigate("/players/list");
+		});
 	};
 
 	return (

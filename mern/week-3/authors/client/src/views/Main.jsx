@@ -15,7 +15,7 @@ const Main = () => {
 				setLoaded(true);
 			})
 			.catch((err) => console.error(err));
-	}, []);
+	});
 
 	return (
 		<div className="main">
