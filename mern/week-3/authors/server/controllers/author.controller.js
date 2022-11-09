@@ -1,11 +1,5 @@
 const { Author } = require("../models/author.model");
 
-module.exports.connectionTest = (req, res) => {
-	res.json({
-		message: "API connection successful",
-	});
-};
-
 module.exports.getAll = (req, res) => {
 	Author.find()
 		.then((allAuthors) => res.json(allAuthors))
@@ -34,6 +28,9 @@ module.exports.create = (req, res) => {
 };
 
 module.exports.update = (req, res) => {
+	console.log(req.params.id);
+	console.log(req.body);
+
 	Author.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
 		.then((updatedAuthor) => res.json({ author: updatedAuthor }))
 		.catch((err) =>

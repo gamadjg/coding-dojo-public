@@ -1,8 +1,6 @@
 const AuthorController = require("../controllers/author.controller");
 
 module.exports = function (app) {
-	// INDEX
-	app.get("/api", AuthorController.connectionTest);
 	// GET ALL
 	app.get("/api/authors", AuthorController.getAll);
 	// GET ONE

@@ -17,16 +17,18 @@ const AuthorList = (props) => {
 			<div className="author_list">
 				{authors.map((author, i) => (
 					<div className="author_container" key={i}>
-						<p className="author_link">{author.name}</p>
-						<Link to={`/edit/${author._id}`}>
-							<button>Edit</button>
-						</Link>
-						<AuthorDelete
-							author_id={author._id}
-							successCallback={() => {
-								removeAuthor(author._id);
-							}}
-						/>
+						<p className="author_name">{author.name}</p>
+						<div className="button_container">
+							<Link to={`/edit/${author._id}`}>
+								<button>Edit</button>
+							</Link>
+							<AuthorDelete
+								author_id={author._id}
+								successCallback={() => {
+									removeAuthor(author._id);
+								}}
+							/>
+						</div>
 					</div>
 				))}
 			</div>
