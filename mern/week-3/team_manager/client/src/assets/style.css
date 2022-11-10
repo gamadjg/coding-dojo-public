@@ -68,3 +68,15 @@ button {
 	justify-content: center;
 	gap: 20px;
 }
+
+.active_playing {
+	background-color: green;
+}
+
+.active_not_playing {
+	background-color: red;
+}
+
+.active_undecided {
+	background-color: yellow;
+}

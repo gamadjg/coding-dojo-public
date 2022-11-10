@@ -1,27 +1,31 @@
-import ManagePlayers from "./views/ManagePlayers";
-// import PlayerNew from "./views/PlayerNew";
-import PlayerStatus from "./views/PlayerStatus";
-// import PlayerEdit from "./views/PlayerEdit";
+import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import { useNavigate } from "react-router";
+import axios from "axios";
 import "./assets/App.css";
 import "./assets/style.css";
-import { useEffect, useState } from "react";
-// import { useNavigate } from "react-router";
-import { Routes, Route } from "react-router-dom";
 import Nav from "./views/Nav";
-// import PreLoad from "./views/PreLoad";
-import axios from "axios";
+import ManagePlayers from "./views/ManagePlayers";
+import PlayerStatus from "./views/PlayerStatus";
 
 function App() {
-	// const navigate = useNavigate();
 	const [players, setPlayers] = useState([]);
-	// const [playersLoaded, setPlayersLoaded] = useState(false);
+	const tabs = [
+		{
+			path: "/players/list",
+			text: "Manager Players",
+		},
+		{
+			path: "/status/games",
+			text: "Manage Player Status",
+		},
+	];
 
 	useEffect(() => {
 		axios
 			.get("http://localhost:8000/api/players")
 			.then((res) => {
 				setPlayers(res.data);
-				// setPlayersLoaded(true);
 			})
 			.catch((err) => console.error(err));
 	});
@@ -31,11 +35,30 @@ function App() {
 		setPlayers(players.filter((player) => player._id !== player_id));
 	};
 
+	const activatePlayer = (selection, game, status, id) => {
+		let player = players.filter((player) => player._id === id);
+		player[0].games[game] = selection;
+		console.log(player[0]);
+
+		axios.put(`http://localhost:8000/api/players/${id}/edit`, {
+			...player[0],
+		});
+	};
+
+	const Landing = () => {
+		const navigate = useNavigate();
+
+		useEffect(() => {
+			navigate("/players/list");
+		});
+	};
+
 	return (
 		<div className="App">
-			<Nav />
+			<h1>Favorite Players</h1>
+			<Nav propTabs={tabs} />
 			<Routes>
-				<Route path="/" element={<div></div>} />
+				<Route path="/" element={<Landing />} />
 				<Route
 					path="/players/list"
 					element={
@@ -46,8 +69,13 @@ function App() {
 					}
 				/>
 				<Route
-					path="/status/game/:game_id"
-					element={<PlayerStatus initialPlayers={players} />}
+					path="/status/games"
+					element={
+						<PlayerStatus
+							initialPlayers={players}
+							activatePlayer={activatePlayer}
+						/>
+					}
 				/>
 			</Routes>
 		</div>
