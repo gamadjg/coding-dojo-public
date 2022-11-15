@@ -1,16 +1,20 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+// import { Link } from "react-router-dom";
 import PlayerDelete from "../components/PlayerDelete";
 import Table from "react-bootstrap/Table";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../assets/style.css";
 
 const PlayerList = (props) => {
-	const { initialPlayers } = props;
-	const [players, setPlayers] = useState(initialPlayers);
+	const { initialPlayers, removePlayer } = props;
+	const [players, setPlayers] = useState([]);
 
-	const removePlayer = (id) => {
-		setPlayers(players.filter((player) => player._id !== id));
+	useEffect(() => {
+		setPlayers(initialPlayers);
+	}, [initialPlayers]);
+
+	const remove = (id) => {
+		removePlayer(id);
 	};
 
 	return (
@@ -35,7 +39,7 @@ const PlayerList = (props) => {
 									<PlayerDelete
 										player_id={player._id}
 										successCallback={() => {
-											removePlayer(player._id);
+											remove(player._id);
 										}}
 									/>
 								</div>
